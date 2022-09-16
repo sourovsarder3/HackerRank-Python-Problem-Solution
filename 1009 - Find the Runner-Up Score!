@@ -1,0 +1,8 @@
+if __name__ == '__main__':
+    n = int(input())
+    arr = map(int, input().split())
+    
+    data_set = set(arr)
+    data_list = list(data_set)
+    sorted_data = sorted(data_list, reverse=True)
+    print(sorted_data[1])
