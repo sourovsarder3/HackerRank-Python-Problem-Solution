@@ -1,0 +1,14 @@
+if __name__ == '__main__':
+
+    input_list = []
+    for _ in range(int(input())):
+        name = input()
+        score = float(input())
+        input_list.append([name, score])
+
+set_of_score = set([x[1] for x in input_list])
+sorted_score = sorted(list(set_of_score))
+name_of_lowest_score = sorted([x[0] for x in input_list if x[1] == sorted_score[1]])
+
+for name in name_of_lowest_score:
+    print(name)
