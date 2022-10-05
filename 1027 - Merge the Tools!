@@ -1,0 +1,12 @@
+def merge_the_tools(string, k):
+    chunks = [string[i:i+k] for i in range(0, len(string), k)]
+    for item in chunks:
+        s_p = ""
+        for char in item:
+            if char not in s_p:
+                s_p = s_p + char
+        print(s_p)
+
+if __name__ == '__main__':
+    string, k = input(), int(input())
+    merge_the_tools(string, k)
