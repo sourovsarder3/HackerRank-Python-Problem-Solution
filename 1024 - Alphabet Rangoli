@@ -1,0 +1,33 @@
+def print_rangoli(size):
+    # your code goes here
+    n = size
+    letter = "abcdefghijklmnopqrstuvwxyz"
+    wi = 1 + (n-1)*4
+
+    fi_st = ""
+
+    for i in range(0, n):
+        st = ""
+        for j in range(0, i):
+            st = st + letter[n-j-1] + "-"
+        st = st + letter[n-i-1]
+        for k in range(0, i):
+            st = st + "-" + letter[n-j+k-1]
+
+        fi_st = fi_st + st.center(wi, "-") + "\n"
+
+    for i in range(n-2, -1, -1):
+        st = ""
+        for j in range(i-1, -1, -1):
+            st = st + letter[n+j-i] + "-"
+        st = st + letter[n-i-1]
+        for k in range(i-1, -1, -1):
+            st = st + "-" + letter[n-k-1]
+        fi_st = fi_st + st.center(wi, "-") + "\n"
+
+
+    print(fi_st)
+
+if __name__ == '__main__':
+    n = int(input())
+    print_rangoli(n)
