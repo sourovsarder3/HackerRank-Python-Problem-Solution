@@ -1,0 +1,10 @@
+def print_formatted(number):
+    # your code goes here
+   wi = len(bin(number).replace("0b", ""))
+   for i in range(1, number+1):
+    print(str(i).rjust(wi, " ") + " " + oct(i).replace("0o", "").rjust(wi, " ") + " " + hex(i).replace("0x", "").upper().rjust(wi, " ") +
+          " " + bin(i).replace("0b", "").rjust(wi, " ") + " ")
+
+if __name__ == '__main__':
+    n = int(input())
+    print_formatted(n)
