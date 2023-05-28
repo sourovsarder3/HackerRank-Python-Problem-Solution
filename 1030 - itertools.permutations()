@@ -1,0 +1,9 @@
+from itertools import permutations
+strr, num = map(str, input().split())
+num = int(num)
+
+myList = list(permutations(strr, num))
+myList.sort()
+
+for item in myList:
+    print(''.join(map(str, item)))
