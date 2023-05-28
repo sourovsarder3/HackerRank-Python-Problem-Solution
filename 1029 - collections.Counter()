@@ -1,0 +1,15 @@
+from collections import Counter
+itemsCount = int(input())
+myList = list(map(int, input().split()))
+items = Counter(myList)
+customer = int(input())
+earning = 0
+
+for i in range(0, customer):
+    x, y = map(int, input().split())
+    if(x in items.keys() and items[x] > 0):
+        earning = earning + y
+        items[x] = items[x]-1
+
+
+print(earning)
