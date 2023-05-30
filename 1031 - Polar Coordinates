@@ -1,0 +1,8 @@
+import cmath
+
+inpt = input()
+
+polr = cmath.polar(complex(inpt))
+
+for item in polr:
+    print(item)
