@@ -1,0 +1,20 @@
+from collections import defaultdict
+
+n, m = map(int, input().split())
+
+nWords = defaultdict(list)
+
+for i in range(0, n):
+    inpt = input()
+    nWords[inpt].append(i+1)
+
+mWords = []
+for j in range(0, m):
+    inpt = input()
+    mWords.append(inpt)
+
+for k in mWords:
+    if nWords[k]:
+        print(" ".join(map(str, nWords[k])))
+    else:
+        print('-1')
