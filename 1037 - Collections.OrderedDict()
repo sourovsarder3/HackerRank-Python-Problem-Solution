@@ -1,0 +1,14 @@
+from collections import defaultdict
+n = int(input())
+di = defaultdict(list)
+ 
+for i in range(n):
+    s = input()
+    st = s.split()
+    price = int(st[-1])
+    product = st[0:-1]
+    pro = " ".join(map(str, product))
+    di[pro].append(price)
+
+for item in di:
+    print(item, sum(di[item]))
