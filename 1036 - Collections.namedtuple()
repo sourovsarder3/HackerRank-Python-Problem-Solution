@@ -1,0 +1,13 @@
+from collections import namedtuple
+n = int(input())
+w, x, y, z = map(str, input().split())
+total_marks = 0
+
+students = namedtuple('students', [w, x, y, z])
+for i in range(n):
+    li = list(input().split())
+    pt = students._make(li)
+    total_marks = total_marks + int(pt.MARKS)
+
+avg = total_marks/n
+print("%.2f" %avg)
