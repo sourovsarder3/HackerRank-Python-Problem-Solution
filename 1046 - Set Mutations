@@ -1,0 +1,16 @@
+n = int(input())
+A = set(map(int, input().split()))
+N = int(input())
+for i in range(N):
+    task = list(input().split())
+    data = set(map(int, input().split()))
+    if task[0] == 'intersection_update':
+        A.intersection_update(data)
+    elif task[0] == 'update':
+        A.update(data)
+    elif task[0] == 'symmetric_difference_update':
+        A.symmetric_difference_update(data)
+    elif task[0] == 'difference_update':
+        A.difference_update(data)
+
+print(sum(A))
