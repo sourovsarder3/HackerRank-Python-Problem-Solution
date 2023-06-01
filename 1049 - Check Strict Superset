@@ -1,0 +1,12 @@
+a = set(map(int, input().split()))
+n = int(input())
+r = True
+for i in range(n):
+    b = set(map(int, input().split()))
+    if (a>=b):
+        continue
+    else:
+        r = False
+
+print(r)
+    
