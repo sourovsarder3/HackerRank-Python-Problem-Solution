@@ -1,0 +1,5 @@
+from itertools import combinations_with_replacement
+st, k = input().split()
+st = sorted(st)
+for item in combinations_with_replacement(st, int(k)):
+    print("".join(map(str, item)))
