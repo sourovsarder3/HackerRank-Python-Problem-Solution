@@ -1,0 +1,11 @@
+from collections import Counter
+n = int(input())
+words = []
+for i in range(n):
+    words.append(input())
+    
+words = Counter(words)
+
+print(len(words))
+for item in words.items():
+    print(item[1], end=' ')
