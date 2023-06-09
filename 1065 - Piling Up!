@@ -1,0 +1,25 @@
+from collections import deque
+T = int(input())
+for i in range(T):
+    n = int(input())
+    li = map(int, input().split())
+    li = deque(li)
+    crnt = max(li[0], li[-1])
+
+    result = 'Yes'
+
+    while len(li) > 1:
+        if crnt == li[0]:
+            li.popleft()
+        else:
+            li.pop()
+        ma = max(li[0], li[-1])
+
+        if crnt < ma:
+            result = 'No'
+            break
+
+        else:
+            crnt = ma
+
+    print(result)
