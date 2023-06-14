@@ -1,0 +1,8 @@
+students, subjects = map(int, input().split())
+lst = []
+for i in range(subjects):
+    lst.append(list(map(float, input().split())))
+
+lst = zip(*lst)
+for item in lst:
+    print('%.1f' % (sum(item)/subjects))
