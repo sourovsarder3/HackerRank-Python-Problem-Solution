@@ -1,0 +1,3 @@
+n = input()
+lst = list(map(int, input().split()))
+print(all(x >= 0 for x in lst) and any(str(x) == ''.join(map(str, reversed(str(x))))for x in lst))
