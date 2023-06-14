@@ -1,17 +1,16 @@
 # Enter your code here. Read input from STDIN. Print output to STDOUT
 s = input()
 
-def func_for_alph(x):
-    if x.islower():
-        return x.upper()
+def func(x):
+    if x.isnumeric():
+        if int(x) % 2 == 0:
+            return ord(x)*10000
+        else:
+            return ord(x)*100
+    elif x.islower():
+        return ord(x)
     elif x.isupper():
-        return x.lower()
+        return ord(x)*10
 
 
-alph = ''.join(sorted((x for x in s if not x.isnumeric()), key=func_for_alph))
-od = ''.join(sorted(x for x in s if x.isnumeric() and int(x) % 2 != 0))
-ev = ''.join(sorted(x for x in s if x.isnumeric() and int(x) % 2 == 0))
-
-print(alph+od+ev)
-
-
+print(''.join(map(str, sorted(s, key=func))))
