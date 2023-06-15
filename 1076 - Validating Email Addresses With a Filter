@@ -1,0 +1,37 @@
+def fun(s):
+    if '@' in s:
+        splited_email = s.split('@')
+        if len(splited_email) == 2 and len(splited_email[0]) != 0:
+            username = splited_email[0]
+            for ch in username:
+                if ch.isalnum() or ch in ['-', '_']:
+                    continue
+                else:
+                    return False
+
+            website_extension = list(splited_email[1].split('.'))
+            website = website_extension[0]
+            extention = website_extension[-1]
+            if website.isalnum() and extention.isalpha() and len(extention) <= 3:
+                return True
+            else:
+                return False
+
+        else:
+            return False
+    else:
+        return False
+
+
+def filter_mail(emails):
+    return list(filter(fun, emails))
+
+if __name__ == '__main__':
+    n = int(input())
+    emails = []
+    for _ in range(n):
+        emails.append(input())
+
+filtered_emails = filter_mail(emails)
+filtered_emails.sort()
+print(filtered_emails)
