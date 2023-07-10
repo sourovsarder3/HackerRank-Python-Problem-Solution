@@ -1,0 +1,15 @@
+import re
+p = re.compile(r'[AEIOUaeiou]{2,}')
+con = 'QWRTYPSDFGHJKLZXCVBNMqwrtypsdfghjklzxcvbnm'
+st = input()
+
+m = p.finditer(st)
+result = []
+for item in m:
+    if item.span()[0] != 0 and item.span()[1] < len(st) and st[item.span()[0] - 1] in con and st[item.span()[1]] in con:
+        result.append(item.group())
+
+if len(result) > 0:
+    print('\n'.join(map(str, result)))
+else:
+    print(-1)
