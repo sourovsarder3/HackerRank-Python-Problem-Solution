@@ -1,0 +1,9 @@
+import re
+pattern = re.compile(r"#[0-9A-F]{6}|#[0-9A-F]{3}(?! \{|\{)", flags=re.I)
+st = ''
+N = int(input())
+for i in range(N):
+    st += input()
+
+for item in pattern.findall(st):
+    print(item)
