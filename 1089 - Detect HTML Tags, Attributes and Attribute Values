@@ -1,0 +1,21 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from html.parser import HTMLParser
+
+class MyParser(HTMLParser):
+    def handle_starttag(self, tag, attrs):
+        print(tag)
+        for item in attrs:
+            print(f'-> {item[0]} > {item[1]}')
+
+    def handle_startendtag(self, tag, attrs):
+        print(tag)
+        for item in attrs:
+            print(f'-> {item[0]} > {item[1]}')
+
+
+parser = MyParser()
+N = int(input())
+st = ''
+for i in range(N):
+    st+=input()
+parser.feed(st)
