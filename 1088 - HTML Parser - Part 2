@@ -1,0 +1,32 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from html.parser import HTMLParser
+
+data_list = []
+
+class MyParser(HTMLParser):
+    def handle_comment(self, data):
+        data_list.append(('c', data))
+
+    def handle_data(self, data):
+        if data != '\n':
+            data_list.append(('d', data))
+
+
+parser = MyParser()
+N = int(input())
+st = ''
+for i in range(N):
+    st+=input()+'\n'
+parser.feed(st)
+
+for item in data_list:
+    if item[0] == 'c':
+        if '\n' in item[1]:
+            print('>>> Multi-line Comment')
+            print(item[1])
+        else:
+            print('>>> Single-line Comment')
+            print(item[1])
+    else:
+        print('>>> Data')
+        print(item[1])
