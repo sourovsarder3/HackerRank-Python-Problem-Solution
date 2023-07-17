@@ -1,0 +1,13 @@
+import re
+pattern = r'(?<= )&&(?= )|(?<= )\|\|(?= )'
+
+def replace(match):
+    if match.group(0) == '&&':
+        return 'and'
+    else:
+        return 'or'
+st = ''
+for i in range(int(input())):
+    st += input()+'\n'
+
+print(re.sub(pattern, replace, st))
