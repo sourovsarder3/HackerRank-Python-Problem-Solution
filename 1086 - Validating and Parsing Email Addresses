@@ -1,0 +1,7 @@
+import re
+pattern = re.compile(r"<[a-z][\w\-.]*@[a-z]+\.[a-z]{1,3}>")
+N = int(input())
+for i in range(N):
+    st = input()
+    if pattern.search(st):
+        print(st)
