@@ -1,0 +1,13 @@
+import re 
+pt1 = re.compile(r'[A-Z]')
+pt2 = re.compile(r'[0-9]')
+pt3 = re.compile(r'^[a-zA-Z0-9]{10}$')
+pt4 = re.compile(r'^(?!.*(.).*\1)[a-zA-Z0-9]+$')
+
+N = int(input())
+for i in range(N):
+    UID = input()
+    if len(pt1.findall(UID))>=2 and len(pt2.findall(UID))>=3 and pt3.search(UID) and pt4.search(UID):
+        print('Valid')
+    else:
+        print('Invalid')
