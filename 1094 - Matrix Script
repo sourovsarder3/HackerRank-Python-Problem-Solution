@@ -1,0 +1,21 @@
+import re
+pattern = re.compile(r'(?<=[a-z0-9])[!@#$%& ]+(?=[a-z0-9])', flags=re.I)
+
+first_multiple_input = input().rstrip().split()
+
+n = int(first_multiple_input[0])
+
+m = int(first_multiple_input[1])
+
+matrix = []
+
+for _ in range(n):
+    matrix_item = input()
+    matrix.append(matrix_item)
+
+decode_string = ''
+for i in range(m):
+    for item in matrix:
+        decode_string += item[i]
+
+print(pattern.sub(' ', decode_string))
