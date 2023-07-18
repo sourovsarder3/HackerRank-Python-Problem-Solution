@@ -1,0 +1,7 @@
+import re
+pt1 =re.compile(r'^[456][0-9]{3}-?[0-9]{4}-?[0-9]{4}-?[0-9]{4}$')
+pt2 = re.compile(r'([0-9])-?\1-?\1-?\1')
+N = int(input())
+for i in range(N):
+    st = input()
+    print('Valid' if pt1.match(st) and not pt2.search(st) else 'Invalid')
