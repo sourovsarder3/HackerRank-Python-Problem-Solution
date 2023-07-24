@@ -1,0 +1,10 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import numpy
+N, M = input().split(' ')
+li = []
+for i in range(int(N)):
+    li.append(input().split(' '))
+
+arr = numpy.array(li, int)
+print(arr.transpose())
+print(arr.flatten())
