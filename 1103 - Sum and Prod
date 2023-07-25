@@ -1,0 +1,4 @@
+import numpy
+N, M = list(map(int, input().split(' ')))
+arr = numpy.array([input().split(' ') for i in range(N)], int)
+print(numpy.prod(arr.sum(axis=0)))
