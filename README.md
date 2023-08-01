@@ -1,6 +1,6 @@
 # HackerRank Python Problem Solving Solutions
 
-![HackerRank Logo](https://upload.wikimedia.org/wikipedia/commons/4/40/HackerRank_Icon-1000px.png)
+<img src='https://upload.wikimedia.org/wikipedia/commons/4/40/HackerRank_Icon-1000px.png' width='400'>
 
 This repository contains my solutions to various Python problems from HackerRank's Problem Solving domain. Each solution is written in Python.
 
